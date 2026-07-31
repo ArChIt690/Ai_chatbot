@@ -1,5 +1,5 @@
 import streamlit as st
-from backend_ai import aibot
+from backend_ai import aibot,retreive_threads
 from langchain_core.messages import HumanMessage
 import uuid
 
@@ -30,7 +30,7 @@ if 'thread_id' not in st.session_state:
     st.session_state['thread_id'] = session_tokens()
 
 if 'chat_thread' not in st.session_state:
-    st.session_state['chat_thread'] = []
+    st.session_state['chat_thread'] = retreive_threads()
 
 #*********************************sidebar ui********************************************
 st.sidebar.title('Ai Bot')
